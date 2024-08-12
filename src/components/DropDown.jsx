@@ -7,15 +7,15 @@ const DropDown = () => {
         <select
           name=""
           id=""
-          className="rounded-md shadow-sm px-5 py-3 bg-white md:px-4 md:py-1 outline-none border-none"
+          className="rounded-md shadow-sm px-5  bg-white  outline-none border-none"
         >
-          <option hidden="">Select a Country</option>
+          <option hidden="">Search Countrt by Region</option>
           <option value={'America'}>America</option>
           <option value={'Africa'}>Africa</option>
-          <option value={'India'}>India</option>
+          <option value={'Asia'}>Asia</option>
           <option value={'Australia'}>Australia</option>
-          <option value={'Japan'}>Japan</option>
-          <option value={'China'}>China</option>
+          <option value={'Antarctica'}>Antarctica</option>
+          <option value={'Europe'}>Europe</option>
         </select>
       </div>
     </>

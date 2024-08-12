@@ -1,10 +1,15 @@
 import React from 'react';
+import { FaMapMarkedAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const CountryCard = ({ name, flag, region, capital, population }) => {
+const CountryCard = ({ name, flag, region, capital, population, showMap }) => {
   return (
     <>
-      <div className="card-container rounded-md max-h-fit overflow-hidden pb-6 shadow-md hover:scale-105 ease-in duration-200">
-        <div className=" flag-container w-full h-40 ">
+      <Link
+        to={`${name}`}
+        className="card-container rounded-md max-h-fit overflow-hidden pb-6 shadow-md hover:scale-105 ease-in duration-200"
+      >
+        <div className=" flag-container w-full md:h-40 ">
           <img src={flag} alt="" className="object-cover w-full h-full  " />
         </div>
 
@@ -21,8 +26,13 @@ const CountryCard = ({ name, flag, region, capital, population }) => {
           <p>
             <b>Population :{population} </b>
           </p>
+          <a href={showMap} target="_blank" className="flex items-center gap-2">
+            {' '}
+            <FaMapMarkedAlt size={24} className="text-gray-800" />
+            Show Map
+          </a>
         </div>
-      </div>
+      </Link>
     </>
   );
 };
