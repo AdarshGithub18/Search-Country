@@ -1,29 +1,15 @@
 import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import { useState, useEffect } from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 function App() {
-  const [theme, setTheme] = useState(localStorage.getItem('theme'));
-
-  function handleTheme() {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  }
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.querySelector('html')?.classList.add('dark');
-    } else {
-      document.querySelector('html')?.classList.remove('dark');
-    }
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
   return (
     <>
-      <main className={`dark:bg-[#12162a] `}>
-        <Header theme={theme} handleTheme={handleTheme} />
+      <ThemeProvider>
+        <Header />
         <Outlet />
-      </main>
+      </ThemeProvider>
     </>
   );
 }

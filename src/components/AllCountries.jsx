@@ -29,7 +29,10 @@ const AllCountries = ({ search }) => {
         <div className="mt-10 mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-9">
           {countriesData
             .filter((country, idx) => {
-              return country.name.common.toLocaleLowerCase().includes(search);
+              return (
+                country.name.common.toLocaleLowerCase().includes(search) ||
+                country.region.toLocaleLowerCase().includes(search)
+              );
             })
             .map((country, idx) => {
               return (
