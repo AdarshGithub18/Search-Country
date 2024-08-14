@@ -7,7 +7,7 @@ const DropDown = () => {
         <select
           name=""
           id=""
-          className="rounded-md shadow-sm px-5  bg-white  outline-none border-none"
+          className="rounded-md shadow-sm px-5 py-4 dark:bg-[#1d273e] dark:text-white bg-white  outline-none border-none"
         >
           <option hidden="">Search Countrt by Region</option>
           <option value={'America'}>America</option>
